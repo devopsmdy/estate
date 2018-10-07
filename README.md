@@ -1,6 +1,6 @@
 Guide to get the app run in development mode
 1. Clone the repo.
-2. You need to install Laravel. Please refer to https://laravel.com/docs/5.7 for installation.
+2. You need to install Laravel. Please refer to https://laravel.com/docs/5.7 for installation. (you need php 7 for laravel)
 3. Run 'composer install' via cmd in the repo directory
 3. You need to have mysql and 'estate' database created in mysql
 4. Run 'php artisan migrate' or 'php artisan migrate:fresh' via cmd in the repo directory to set up the database.
