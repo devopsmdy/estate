@@ -1,0 +1,14 @@
+body {
+	padding-top: 3rem;
+}
+
+.starter-template {
+	padding: 3rem 1.5rem;
+}
+
+#sessionMessage {
+	position: fixed;
+	z-index: 10;
+	bottom: 20px;
+	right: 20px;
+}
