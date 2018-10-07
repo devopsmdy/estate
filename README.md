@@ -7,3 +7,8 @@ Guide to get the app run in development mode
 5. Run 'php artisan serve' via cmd in the repo directory to serve the application.
 6. You can now test the app via the served address.
 7. Plese refer to the 'How to' Tab in Navagation Section to know more about app.
+
+
+Here are some of the small projects I've managed to recover.
+http://www.eazywash.dx.am ("The final prototype")
+https://kwarnkhammoon.000webhostapp.com/shopping.php ("This prototype is still in development. I can't find the final one")
