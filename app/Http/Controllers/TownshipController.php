@@ -37,7 +37,7 @@ class TownshipController extends Controller
 
         //update
         Township::where('id', $request->township)
-          ->update(['name' => $request->editedTownship]);
+          ->update(['name' => $request->name]);
         //response
         return redirect()->action('TownshipController@edit');
     }
