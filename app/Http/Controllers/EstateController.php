@@ -96,9 +96,12 @@ class EstateController extends Controller
      */
     public function edit(Estate $estate)
     {
-       $types= Type::orderBy('name', 'asc')->get();
-       $townships= Township::orderBy('name', 'asc')->get();
-       return view('estate/edit', compact('estate', 'types', 'townships'));
+       $types= Type::where('id', '<>', $estate->type_id)->orderBy('name', 'asc')->get(); //for option
+       $townships= Township::where('id', '<>', $estate->township_id)->orderBy('name', 'asc')->get(); //for option
+       $type_name= Type::where('id', $estate->type_id)->pluck('name'); //for ori
+       $township_name= Township::where('id', $estate->township_id)->pluck('name'); //for_ori
+    //    return $estate;
+       return view('estate/edit', compact('estate', 'types', 'townships', 'type_name', 'township_name'));
    }
 
     /**

@@ -12,8 +12,9 @@
 	{{ csrf_field() }}
 	<input type="hidden" name="_method" value="PUT">
 	<div class="form-group">
-		<label for="township"><a href="/township/create" style="text-decoration: none">Township</a>(Old:{{ $estate->township->name }})</label>
-		<select class="form-control bg-danger" id="township" name="township_id">
+		<select class="form-control" id="township" name="township_id">
+			//the original value
+			<option value="{{ $estate->township_id }}">{{ $township_name[0] }}</option>
 			@foreach($townships as $township)
 			<option value="{{ $township->id }}">{{ $township->name }}</option>
 			@endforeach
@@ -50,8 +51,8 @@
 	</div>
 
 	<div class="form-group">
-		<label for="type"><a href="/type/create" style="text-decoration: none">Type</a>(Old:{{ $estate->type->name}})</label>
-		<select class="form-control bg-danger" id="type" name="type_id" >
+		<select class="form-control" id="type" name="type_id" >
+			<option value="{{ $estate->type_id }}">{{ $type_name[0] }}</option>
 			@foreach($types as $type)
 			<option value="{{ $type->id }}">{{ $type->name }}</option>
 			@endforeach
