@@ -100,8 +100,25 @@ class EstateController extends Controller
        $townships= Township::where('id', '<>', $estate->township_id)->orderBy('name', 'asc')->get(); //for option
        $type_name= Type::where('id', $estate->type_id)->pluck('name'); //for ori
        $township_name= Township::where('id', $estate->township_id)->pluck('name'); //for_ori
+       $rent="";
+       $sale="";
+       $available="";
+       $not_available="";
+       if($estate->deal == "rent"){
+           $rent="checked";
+       }
+       else {
+           $sale="checked";
+       }
+
+       if($estate->status == 1){
+           $available="checked";
+       }
+       else {
+           $not_available="checked";
+       }
     //    return $estate;
-       return view('estate/edit', compact('estate', 'types', 'townships', 'type_name', 'township_name'));
+       return view('estate/edit', compact('estate', 'types', 'townships', 'type_name', 'township_name', 'rent', 'sale', 'available', 'not_available'));
    }
 
     /**
