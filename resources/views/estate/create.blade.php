@@ -34,17 +34,17 @@
 	</div>
 	<div class="form-group">
 		<label for="road">Road</label>
-		<input type="text" class="form-control" id="road" placeholder="Road" name="road">
+		<input type="text" class="form-control" id="road" placeholder="Road" name="road" required>
 	</div>
 
 	<div class="form-group">
 		<label for="address">Address</label>
-		<input type="text" class="form-control" id="address" placeholder="Address" name="address">
+		<input type="text" class="form-control" id="address" placeholder="Address" name="address" required>
 	</div>
 
 	<div class="form-group">
 		<label for="area">Area</label>
-		<input type="text" class="form-control" id="area" placeholder="Area" name="area">
+		<input type="text" class="form-control" id="area" placeholder="Area" name="area" required>
 	</div>
 
 	<div class="form-group">
@@ -58,11 +58,11 @@
 	
 	<div class="form-group">
 		<label for="price">Price</label>
-		<input type="number" class="form-control" id="price" placeholder="Price" name="price">
+		<input type="number" class="form-control" id="price" placeholder="Price" name="price" required>
 	</div>
 	<div class="form-group">
 		<label for="note">Note</label>
-		<textarea class="form-control" id="note" rows="3" name="note" placeholder="Note"></textarea>
+		<textarea class="form-control" id="note" rows="3" name="note" placeholder="Note" required></textarea>
 	</div>
 	<div class="form-group border rounded p-3">
 		<div class="form-check">

@@ -27,7 +27,7 @@
 				}
 			?>
 			<tr class={{$color}}>
-				<th scope="row"><a href="/estate/{{ $estate->id }}/edit" class="text-dark" style="text-decoration: none">{{$i }}</a></th>
+				<th scope="row"><a class='border p-1 rounded border-warning bg-light' href="/estate/{{ $estate->id }}/edit" class="text-dark" style="text-decoration: none">{{$i }}</a></th>
 				<td>{{$estate->address}}</td>
 				<td>{{$estate->road}}</td>
 				<td>{{$estate->area}}</td>
