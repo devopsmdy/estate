@@ -72,9 +72,24 @@ class EstateController extends Controller
      */
     public function store(StoreEstate $request) //StoreEstate
     {
-        Estate::create($request->all());
-        $request->session()->flash('message', 'Real Estate Created');
-        return redirect()->action('EstateController@create');
+        $validated = $request->validated();
+        //store estate
+        //get estate id
+        //store pictures (name, estate_id)
+        
+        if($request->hasfile('picture'))
+         {
+
+            foreach($request->file('picture') as $image)
+            {
+                echo $name=$image->getClientOriginalName();
+                // $image->move(public_path().'/images/', $name);  
+                // $data[] = $name;  
+            }
+         }
+        // Estate::create($request->all());
+        // $request->session()->flash('message', 'Real Estate Created');
+        // return redirect()->action('EstateController@create');
     }
 
     /**
