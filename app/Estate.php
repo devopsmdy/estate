@@ -11,12 +11,17 @@ class Estate extends Model
         return $this->belongsTo('App\Type');
     }
 
-    protected $fillable = [
-        'address', 'road', 'area','price','note','township_id', 'type_id', 'deal','status'
-    ];
-
     public function township()
     {
         return $this->belongsTo('App\Township');
+    } 
+
+    public function pictures()
+    {
+        return $this->hasMany('App\Picture');
     }
+
+    protected $fillable = [
+        'address', 'road', 'area','price','note','township_id', 'type_id', 'deal','status'
+    ];
 }
