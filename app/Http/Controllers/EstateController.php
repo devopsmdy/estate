@@ -75,18 +75,17 @@ class EstateController extends Controller
     {
         //store estate
         $estate= Estate::create($request->validated());
-        //get estate id
-        $estate_id= $estate->id;
         //store pictures (name, estate_id)
         if($request->hasfile('picture'))
          {
-
+            //get estate id
+            $estate_id= $estate->id;
             foreach($request->file('picture') as $image)
             {
                 $name=$image->getClientOriginalName();
                 if(Picture::create(['name' => $name, 'estate_id' => $estate_id])){
                     //add image to storage/app/pictures/
-                    $image->storeAs('pictures', $name); //path and name
+                    $image->storeAs('public/pictures', $name); //path and name
                 }
             }
          }
@@ -100,9 +99,12 @@ class EstateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Estate $estate)
     {
-        //
+        $type_name= Type::where('id', $estate->type_id)->pluck('name'); //for ori
+        $township_name= Township::where('id', $estate->township_id)->pluck('name'); //for_ori
+        $pictures= Picture::where('estate_id', $estate->id)->pluck('name'); //git pics
+        return view('estate/show', compact('estate', 'type_name', 'township_name', 'pictures'));
     }
 
     /**
@@ -136,6 +138,14 @@ class EstateController extends Controller
        }
     //    return $estate;
        return view('estate/edit', compact('estate', 'types', 'townships', 'type_name', 'township_name', 'rent', 'sale', 'available', 'not_available'));
+   }
+
+   public function editPicture(Estate $estate)
+    {
+       $type_name= Type::where('id', $estate->type_id)->pluck('name'); //for ori
+       $township_name= Township::where('id', $estate->township_id)->pluck('name'); //for_ori
+       $pictures= Picture::where('estate_id', $estate->id)->pluck('name'); //git pics
+       return view('estate/editPicture', compact('estate', 'type_name', 'township_name', 'pictures'));
    }
 
     /**

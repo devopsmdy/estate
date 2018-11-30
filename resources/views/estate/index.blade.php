@@ -14,6 +14,7 @@
 				<th scope="col">Price</th>
 				<th scope="col">Note</th>
 				<th scope="col">Deal</th>
+				<th scope="col">Picture</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -36,6 +37,7 @@
 				<td>{{$estate->price}}</td>
 				<td>{{$estate->note}}</td>
 				<td>{{$estate->deal}}</td>
+				<td class="bg-light"><a href="/estate/{{ $estate->id }}/show" class="border border-success p-2 rounded">More</a></td>
 			</tr>
 			<?php $i++ ?>
 			@endforeach

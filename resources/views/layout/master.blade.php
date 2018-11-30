@@ -23,7 +23,6 @@
   @endif
 
   <main role="main" class="container">
-
     <div class="starter-template">
       @yield('content')
     </div>

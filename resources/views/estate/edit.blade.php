@@ -94,7 +94,11 @@
 			</label>
 		</div>
 	</div>
-	<button type="submit" class="btn btn-success">Edit</button>
+	{{-- Picture --}}
+	<div class="form-group border rounded p-3">
+		<a href="/estate/pictures/{{$estate->id}}/edit">Edit Pictures</a>
+	</div>
+	<button type="submit" class="btn btn-success">Save</button>
 </form>
 
 @endsection

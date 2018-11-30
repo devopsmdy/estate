@@ -25,6 +25,8 @@ Route::get('estate/search', 'EstateController@search');
 Route::post('estate/search', 'EstateController@find');
 Route::get('estate/{estate}/edit', 'EstateController@edit');
 Route::put('estate/{estate}', 'EstateController@update');
+Route::get('estate/pictures/{estate}/edit' ,'EstateController@editPicture');
+Route::get('estate/{estate}/show', 'EstateController@show');
 
 
 Route::get('type/create', 'TypeController@create');
