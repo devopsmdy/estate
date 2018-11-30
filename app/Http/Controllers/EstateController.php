@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Type;
 use App\Township;
 use App\Estate;
+use App\Picture;
 use App\Http\Requests\StoreEstate;
 
 class EstateController extends Controller
@@ -72,24 +73,25 @@ class EstateController extends Controller
      */
     public function store(StoreEstate $request) //StoreEstate
     {
-        $validated = $request->validated();
         //store estate
+        $estate= Estate::create($request->validated());
         //get estate id
+        $estate_id= $estate->id;
         //store pictures (name, estate_id)
-        
         if($request->hasfile('picture'))
          {
 
             foreach($request->file('picture') as $image)
             {
-                echo $name=$image->getClientOriginalName();
-                // $image->move(public_path().'/images/', $name);  
-                // $data[] = $name;  
+                $name=$image->getClientOriginalName();
+                if(Picture::create(['name' => $name, 'estate_id' => $estate_id])){
+                    //add image to storage/app/pictures/
+                    $image->storeAs('pictures', $name); //path and name
+                }
             }
          }
-        // Estate::create($request->all());
-        // $request->session()->flash('message', 'Real Estate Created');
-        // return redirect()->action('EstateController@create');
+        $request->session()->flash('message', 'Real Estate Created');
+        return redirect()->action('EstateController@create');
     }
 
     /**
