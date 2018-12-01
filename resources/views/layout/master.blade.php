@@ -15,7 +15,7 @@
   <link href="/css/template.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-light">
   @include('layout.nav')
 
   @if(session('message'))
