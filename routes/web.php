@@ -28,6 +28,9 @@ Route::put('estate/{estate}', 'EstateController@update');
 Route::get('estate/pictures/{estate}/edit' ,'EstateController@editPicture');
 Route::get('estate/{estate}/show', 'EstateController@show');
 
+Route::get('pictures/{estate}/delete', 'PictureController@delete');
+Route::get('pictures/{estate}/edit', 'PictureController@edit');
+Route::post('pictures', 'PictureController@store');
 
 Route::get('type/create', 'TypeController@create');
 Route::post('type', 'TypeController@store');

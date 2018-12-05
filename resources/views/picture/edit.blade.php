@@ -15,8 +15,12 @@
 <div class="row">
     @foreach($pictures as $picture)
     <div class="col-lg-12 img-thumbnail border-info mb-3 mx-auto">
-    <div><a href="/pictures/{{$estate->id}}/delete" class="float-right btn btn-danger rounded-circle" onclick="confirm('delete?');">X</a></div>
-        <img src="{{ asset('storage/pictures') }}/{{ $picture }}" class="img-fluid">
+        <div>
+            <a href="/pictures/{{$estate->id}}/delete?picture_id={{$picture->id}}&&picture_name={{$picture->name}}" 
+                class="float-right btn btn-danger rounded-circle m-1" 
+                onclick="return confirm('delete?');">X</a>
+        </div>
+        <img src="{{ asset('storage/pictures') }}/{{ $picture->name }}" class="img-fluid">
     </div>
     @endforeach
 </div>

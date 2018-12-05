@@ -19,6 +19,10 @@
     </div>
     @endforeach
 </div>
-
-
+<form action="/pictures" method="POST" class="row" enctype="multipart/form-data">
+    {{ csrf_field() }}
+    <div class="col-lg-7"><input type="file" name="picture[]" class="float-right pt-2" required multiple></div>
+    <input type="hidden" name="estate_id" value="{{$estate->id}}">
+    <div class="col-lg-5"><button type="submit" class="float-left btn btn-success">Add</button></div>
+</form>
 @endsection

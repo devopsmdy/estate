@@ -80,13 +80,12 @@ class EstateController extends Controller
          {
             //get estate id
             $estate_id= $estate->id;
-            foreach($request->file('picture') as $image)
-            {
-                $name=$image->getClientOriginalName();
-                if(Picture::create(['name' => $name, 'estate_id' => $estate_id])){
-                    //add image to storage/app/pictures/
-                    $image->storeAs('public/pictures', $name); //path and name
-                }
+            foreach($request->file('picture') as $image){
+                //move file to storage
+                $name=basename($image->store('public/pictures')); //path and name
+                // $name=$image->getClientOriginalName();
+                //store in db
+                Picture::create(['name' => $name, 'estate_id' => $estate_id]);
             }
          }
         $request->session()->flash('message', 'Real Estate Created');
@@ -138,14 +137,6 @@ class EstateController extends Controller
        }
     //    return $estate;
        return view('estate/edit', compact('estate', 'types', 'townships', 'type_name', 'township_name', 'rent', 'sale', 'available', 'not_available'));
-   }
-
-   public function editPicture(Estate $estate)
-    {
-       $type_name= Type::where('id', $estate->type_id)->pluck('name'); //for ori
-       $township_name= Township::where('id', $estate->township_id)->pluck('name'); //for_ori
-       $pictures= Picture::where('estate_id', $estate->id)->pluck('name'); //git pics
-       return view('estate/editPicture', compact('estate', 'type_name', 'township_name', 'pictures'));
    }
 
     /**

@@ -86,9 +86,8 @@
     </div>
     {{-- Picture --}}
     <div class="form-group">
-        <label for="road">Picture</label>
-        {{-- <input type="file" name="filename[]" class="form-control"> --}}
-        <input type="file" class="form-control" id="picture" placeholder="Picture" name="picture[]" multiple>
+        <label for="road">Picture</label>s
+        <input type="file" class="form-control-file" id="picture" placeholder="Picture" name="picture[]" multiple>
     </div>
     {{-- Button --}}
     <button type="submit" class="btn btn-success">Add</button>
