@@ -32,6 +32,11 @@ class PictureController extends Controller
 
     public function store(Request $request)
     {
+        //validate $request
+        $validatedData= $request->validate([
+            'estate_id' => 'required|numeric',
+            'picture.*' => 'image'
+        ]);
         foreach($request->file('picture') as $image){
             $name=basename($image->store('public/pictures')); //path and name
             Picture::create(['name' => $name, 'estate_id' => $request->estate_id]);

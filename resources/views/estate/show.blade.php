@@ -1,7 +1,12 @@
 @extends('layout.master')
 
 @section('content')
-
+@if($errors->any())
+<div class="container">
+    @include('layout.errors')
+</div>
+<hr />
+@endif
 <div class="row mb-3 small">
     <div class="col-lg-6 bg-primary rounded"><span>Address : {{$estate->address}}</span></div>
     <div class="col-lg-6 bg-secondary rounded"><span>Road : {{$estate->road}}</span></div>
