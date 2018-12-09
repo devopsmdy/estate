@@ -18,30 +18,33 @@ Route::get('/help', function(){
 	return view('help');
 });
 
-Route::get('estate/create', 'EstateController@create');
-Route::post('estate', 'EstateController@store');
-Route::get('estate', 'EstateController@index');
-Route::get('estate/search', 'EstateController@search');
-Route::post('estate/search', 'EstateController@find');
-Route::get('estate/{estate}/edit', 'EstateController@edit');
-Route::put('estate/{estate}', 'EstateController@update');
-Route::get('estate/pictures/{estate}/edit' ,'EstateController@editPicture');
-Route::get('estate/{estate}/show', 'EstateController@show');
+Route::middleware(['auth'])->group(function () {
+	Route::get('estate/create', 'EstateController@create');
+	Route::post('estate', 'EstateController@store');
+	Route::get('estate', 'EstateController@index');
+	Route::get('estate/search', 'EstateController@search');
+	Route::post('estate/search', 'EstateController@find');
+	Route::get('estate/{estate}/edit', 'EstateController@edit');
+	Route::put('estate/{estate}', 'EstateController@update');
+	Route::get('estate/pictures/{estate}/edit' ,'EstateController@editPicture');
+	Route::get('estate/{estate}/show', 'EstateController@show');
 
-Route::get('pictures/{estate}/delete', 'PictureController@delete');
-Route::get('pictures/{estate}/edit', 'PictureController@edit');
-Route::post('pictures', 'PictureController@store');
+	Route::get('pictures/{estate}/delete', 'PictureController@delete');
+	Route::get('pictures/{estate}/edit', 'PictureController@edit');
+	Route::post('pictures', 'PictureController@store');
 
-Route::get('type/create', 'TypeController@create');
-Route::post('type', 'TypeController@store');
-Route::get('type/edit', 'TypeController@edit');
-Route::post('type/update', 'TypeController@update');
+	Route::get('type/create', 'TypeController@create');
+	Route::post('type', 'TypeController@store');
+	Route::get('type/edit', 'TypeController@edit');
+	Route::post('type/update', 'TypeController@update');
 
-Route::get('township/create', 'TownshipController@create');
-Route::post('township', 'TownshipController@store');
-Route::get('township/edit', 'TownshipController@edit');
-Route::post('township/update', 'TownshipController@update');
+	Route::get('township/create', 'TownshipController@create');
+	Route::post('township', 'TownshipController@store');
+	Route::get('township/edit', 'TownshipController@edit');
+	Route::post('township/update', 'TownshipController@update');
 
-Auth::routes(['register' => false]);
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes(['register' => true]);
+
+// Route::get('/home', 'HomeController@index')->name('home');
