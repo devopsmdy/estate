@@ -41,3 +41,6 @@ Route::get('township/create', 'TownshipController@create');
 Route::post('township', 'TownshipController@store');
 Route::get('township/edit', 'TownshipController@edit');
 Route::post('township/update', 'TownshipController@update');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
