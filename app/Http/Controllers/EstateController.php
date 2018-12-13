@@ -82,7 +82,8 @@ class EstateController extends Controller
             $estate_id= $estate->id;
             foreach($request->file('picture') as $image){
                 //move file to storage
-                $name=basename($image->store('public/pictures')); //path and name
+                $name=basename(Storage::putFile('public/pictures', new File($image)));
+                // $name=basename($image->store('public/pictures')); //path and name
                 // $name=$image->getClientOriginalName();
                 //store in db
                 Picture::create(['name' => $name, 'estate_id' => $estate_id]);

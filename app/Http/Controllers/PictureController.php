@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\File;
 use App\Type;
 use App\Township;
 use App\Estate;
@@ -38,7 +39,8 @@ class PictureController extends Controller
             'picture.*' => 'image'
         ]);
         foreach($request->file('picture') as $image){
-            $name=basename($image->store('public/pictures')); //path and name
+            $name=basename(Storage::putFile('public/pictures', new File($image)));
+            // $name=basename($image->store('public/pictures')); //path and name
             Picture::create(['name' => $name, 'estate_id' => $request->estate_id]);
         }
         return back();
