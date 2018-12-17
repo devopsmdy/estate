@@ -19,8 +19,8 @@
 </div>
 <div class="row">
     @foreach($pictures as $picture)
-    <div class="col-lg-12 img-thumbnail border-info mb-3 mx-auto">
-        <img src="{{ asset('storage/pictures') }}/{{ $picture }}" class="img-fluid">
+    <div class="col-lg-12 border-info mb-3">
+        <img src="{{ asset('storage/pictures') }}/{{ $picture }}" class="img-fluid img-thumbnail mx-auto d-block">
     </div>
     @endforeach
 </div>
