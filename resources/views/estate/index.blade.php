@@ -36,7 +36,7 @@
                     <td>{{$estate->area}}</td>
                     <td>{{$estate->type->name}}</td>
                     <td>{{$estate->township->name}}</td>
-                    <td>{{$estate->price}}</td>
+                    {{-- <td>{{$estate->price}}</td> --}}
                     {{-- <td>{{$estate->note}}</td> --}}
                     <td>{{$estate->deal}}</td>
                     <td><a href="/estate/{{ $estate->id }}/show" class="border border-success p-1 rounded bg-light" style="text-decoration: none;">More</a></td>
