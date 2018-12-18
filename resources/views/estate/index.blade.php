@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
     <div class="col-12 rounded">
-        <table class="table">
+        <table class="table table-sm">
             <thead>
                 <tr>
                     <th scope="col">#</th>
