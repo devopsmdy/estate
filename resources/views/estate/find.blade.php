@@ -43,8 +43,8 @@
                     <th scope="col">Area</th>
                     <th scope="col">Type</th>
                     <th scope="col">Township</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Note</th>
+                    {{-- <th scope="col">Price</th> --}}
+                    {{-- <th scope="col">Note</th> --}}
                     <th scope="col">Deal</th>
                     <th scope="col">Picture</th>
                 </tr>
@@ -67,8 +67,8 @@
                     <td>{{$estate->area}}</td>
                     <td>{{$estate->type->name}}</td>
                     <td>{{$estate->township->name}}</td>
-                    <td>{{$estate->price}}</td>
-                    <td>{{$estate->note}}</td>
+                    {{-- <td>{{$estate->price}}</td> --}}
+                    {{-- <td>{{$estate->note}}</td> --}}
                     <td>{{$estate->deal}}</td>
                     <td><a href="/estate/{{ $estate->id }}/show" class="border border-success p-1 rounded bg-light" style="text-decoration: none;">More</a></td>
                 </tr>
