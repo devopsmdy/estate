@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="/estate">Real Estates</a>
+        <a class="nav-link" href="/estate?page=1">Real Estates</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/township/create">Township</a>
