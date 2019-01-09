@@ -1,6 +1,10 @@
 @extends('layout.master')
 
 @section('content')
+<?php 
+    $str=$_SERVER['QUERY_STRING'];
+    $int = (int) filter_var($str, FILTER_SANITIZE_NUMBER_INT);
+?>
 <div class="row">
     <div class="col-12 rounded">
         <table class="table table-sm">
@@ -19,7 +23,10 @@
                 </tr>
             </thead>
             <tbody>
-                <?php $i=1 ?>
+                <?php 
+                    $int= ($int * 10)-10;
+                    $i = ++$int;
+                ?>
                 @foreach($estates as $estate)
                 <?php
                     if($estate->status == 1 ) { 
