@@ -20,7 +20,7 @@ class EstateController extends Controller
      */
     public function index()
     {
-        $estates= Estate::orderBy('id', 'DESC')->paginate(9);
+        $estates= Estate::orderBy('id', 'DESC')->paginate(5);
         return view('estate.index', compact('estates'));
     }
 
