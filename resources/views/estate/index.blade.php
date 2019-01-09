@@ -46,5 +46,6 @@
             </tbody>
         </table>
     </div>
+    <div class="mx-auto">{{ $estates->links() }}</div>
 </div>
 @endsection
