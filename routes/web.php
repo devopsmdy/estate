@@ -10,11 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function(){
+Route::get('/', function () {
 	return redirect()->action('EstateController@search');
 });
 
-Route::get('/help', function(){
+Route::get('/help', function () {
 	return view('help');
 });
 
@@ -26,7 +26,7 @@ Route::middleware(['auth'])->group(function () {
 	Route::post('estate/search', 'EstateController@find');
 	Route::get('estate/{estate}/edit', 'EstateController@edit');
 	Route::put('estate/{estate}', 'EstateController@update');
-	Route::get('estate/pictures/{estate}/edit' ,'EstateController@editPicture');
+	Route::get('estate/pictures/{estate}/edit', 'EstateController@editPicture');
 	Route::get('estate/{estate}/show', 'EstateController@show');
 
 	Route::get('pictures/{estate}/delete', 'PictureController@delete');
@@ -43,6 +43,8 @@ Route::middleware(['auth'])->group(function () {
 	Route::get('township/edit', 'TownshipController@edit');
 	Route::post('township/update', 'TownshipController@update');
 
+	Route::get('user/edit', 'UserController@edit');
+	Route::post('user/update', 'UserController@update');
 });
 
 Auth::routes(['register' => false]);
