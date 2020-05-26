@@ -16,7 +16,7 @@
     @foreach($pictures as $picture)
     <div class="col-lg-12 img-thumbnail border-info mb-3 mx-auto">
     <div><a href="/pictures/{{$estate->id}}/delete" class="float-right btn btn-danger rounded-circle" onclick="confirm('delete?');">X</a></div>
-        <img src="https://assets.homegiftmm.com/estate_pictures/{{ $picture }}" class="img-fluid">
+        <img src="https://assets.arzheng.com/estate_pictures/{{ $picture }}" class="img-fluid">
     </div>
     @endforeach
 </div>

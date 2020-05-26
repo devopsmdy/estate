@@ -20,7 +20,7 @@
                 class="float-right btn btn-danger rounded-circle m-1" 
                 onclick="return confirm('delete?');">X</a>
         </div>
-        <img src="https://assets.homegiftmm.com/estate_pictures/{{ $picture->name }}" class="img-fluid">
+        <img src="https://assets.arzheng.com/estate_pictures/{{ $picture->name }}" class="img-fluid">
     </div>
     @endforeach
 </div>
