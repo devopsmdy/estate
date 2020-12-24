@@ -20,7 +20,7 @@
 <div class="row">
     @foreach($pictures as $picture)
     <div class="col-lg-12 border-info mb-3">
-        <img src="https://assets.arzheng.com/estate_pictures/{{ $picture }}" class="img-fluid img-thumbnail mx-auto d-block">
+        <img src="https://assets.arzheng.xyz/estate_pictures/{{ $picture }}" class="img-fluid img-thumbnail mx-auto d-block">
     </div>
     @endforeach
 </div>
