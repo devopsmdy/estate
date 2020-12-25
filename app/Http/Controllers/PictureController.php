@@ -34,8 +34,8 @@ class PictureController extends Controller
     {
         //validate $request
         $validatedData = $request->validate([
-            'estate_id' => 'required|numeric',
-            'picture.*' => 'image',
+            'estate_id' => 'required|numeric'
+            
         ]);
         foreach ($request->file('picture') as $image) {
             $name = basename(Storage::disk('spaces')->putFile('estate_pictures', new File($image), 'public'));
