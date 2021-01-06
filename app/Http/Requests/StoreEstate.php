@@ -33,7 +33,7 @@ class StoreEstate extends FormRequest
             'price' => 'required',
             'note' => 'required',
             'status' => 'required',
-            'picture.*' => 'image',
+           
         ];
     }
 
